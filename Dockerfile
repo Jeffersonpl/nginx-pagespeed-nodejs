@@ -4,9 +4,7 @@ MAINTAINER Jefferson Pereira Leite <jefferson@jeffersonpl.com.br>
 
 RUN apt-get update
 
-RUN apt-get install -y curl
-
-RUN apt-get install -y build-essential zlib1g-dev libpcre3-dev unzip uuid-dev wget sudo libssl-dev openssl
+RUN apt-get install -y curl build-essential zlib1g-dev libpcre3-dev unzip uuid-dev wget sudo libssl-dev openssl
 
 ADD ./docker/install/pagespeed /pagespeed
 
