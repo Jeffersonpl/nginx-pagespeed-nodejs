@@ -8,7 +8,7 @@ RUN apt-get install -y curl build-essential zlib1g-dev libpcre3-dev unzip uuid-d
 
 ADD ./docker/install/pagespeed /pagespeed
 
-RUN  bash pagespeed \ --nginx-version latest
+RUN  bash /pagespeed  --nginx-version latest
 
 RUN apt-get install -y nodejs 
 
@@ -22,8 +22,9 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 EXPOSE 80
 
-ENTRYPOINT ["/usr/local/nginx/sbin/nginx"] 
 
-CMD ["start", "-g"]
+CMD ["/usr/local/nginx/sbin/nginx", "-g"]
+
+
 
 
